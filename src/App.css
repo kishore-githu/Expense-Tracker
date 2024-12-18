@@ -1,0 +1,262 @@
+/* General Styling */
+.App {
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #eef2f3, #8e9eab);
+  padding: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.App::before {
+  content: '';
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: rgba(0, 151, 167, 0.3);
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(50px);
+}
+
+.App::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  right: -50px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 111, 97, 0.3);
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+/* Heading Styling */
+h1, h2 {
+  color: #3f4a56;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  z-index: 1;
+}
+
+/* Form Styling */
+form {
+  background: linear-gradient(135deg, #ffffff, #e3f2fd);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: fadeInForm 0.7s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+form::before {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  background: rgba(0, 151, 167, 0.2);
+  border-radius: 50%;
+  filter: blur(20px);
+}
+
+form:hover {
+  transform: translateY(-5px);
+}
+
+label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2d3436;
+}
+
+input, select, button {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid #d1d8e0;
+  width: 100%;
+  font-size: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+input:focus, select:focus, button:hover {
+  border-color: #0097a7;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 151, 167, 0.5);
+}
+
+button {
+  background-color: #0097a7;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  transform: skewX(-45deg);
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover::before {
+  left: 100%;
+}
+
+button:hover {
+  background-color: #00838f;
+  transform: scale(1.05);
+}
+
+/* Entry List Styling */
+.entry-list {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  background: linear-gradient(135deg, #ffffff, #e8f5e9);
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.3s ease-in-out;
+  animation: fadeInList 0.7s ease-out;
+  position: relative;
+}
+
+ul li:hover {
+  transform: translateY(-5px);
+}
+
+ul li button {
+  background-color: #ff6f61;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+ul li button:hover {
+  background-color: #e04e3b;
+}
+
+ul li .edit-button {
+  background-color: #ffb74d;
+}
+
+ul li .edit-button:hover {
+  background-color: #f57c00;
+}
+
+/* Summary Section */
+.summary {
+  background: linear-gradient(135deg, #ffffff, #ede7f6);
+  padding: 25px;
+  border-radius: 12px;
+  margin-top: 30px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  animation: fadeInSummary 0.7s ease-out;
+}
+
+.summary p {
+  font-size: 1.1rem;
+  color: #616161;
+  margin-bottom: 10px;
+}
+
+.summary h2 {
+  color: #0097a7;
+  margin-bottom: 20px;
+}
+
+/* Chart Section */
+.chart-container {
+  margin-top: 40px;
+  padding: 25px;
+  background: linear-gradient(135deg, #ffffff, #dcedc8);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.chart-container:hover {
+  transform: translateY(-5px);
+}
+
+/* Animations */
+@keyframes fadeInForm {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInList {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSummary {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Button Hover Scale Animation */
+button {
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
